@@ -10,7 +10,11 @@ type TodoProps = {
 const TodoItem = (props: TodoProps) => {
   return (
     <div className="todoItem">
-      <span>{props.todo.name}</span>
+      <span
+        style={{ textDecoration: props.todo.done ? "line-through" : "none" }}
+      >
+        {props.todo.name}
+      </span>
       <div>
         <input
           type="checkbox"

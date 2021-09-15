@@ -21,8 +21,9 @@ const useTodoList = () => {
 
         newTodos[targetTodoIndex] = {
             ...newTodos[targetTodoIndex],
-            done: !newTodos[targetTodoIndex].done
+            done: !(newTodos[targetTodoIndex].done)
         }
+        setTodos(newTodos)
     }
 
     const deleteTodo = (id: number) => {
@@ -36,7 +37,7 @@ const useTodoList = () => {
     const [filterDoneTodo, setFilterDoneTodo] = useState<boolean>(false)
 
     const switchFilterDoneTodo = () => {
-        setFilterDoneTodo(!filterDoneTodo)
+        setFilterDoneTodo(!(filterDoneTodo))
     }
 
     let workTodos = todos

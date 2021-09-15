@@ -22,6 +22,7 @@ const TodoList = () => {
         <div className="todoList">
           {todoList.todos.map((todo) => (
             <TodoItem
+              key={todo.id}
               todo={todo}
               switchTodoDoneStatus={todoList.switchTodoDoneStatus}
               deleteTodo={todoList.deleteTodo}
