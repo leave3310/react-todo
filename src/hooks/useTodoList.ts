@@ -32,7 +32,7 @@ const useTodoList = () => {
 
         setTodos(newTodo)
     }
-
+    // 過濾完成條件
     const [filterDoneTodo, setFilterDoneTodo] = useState<boolean>(false)
 
     const switchFilterDoneTodo = () => {
@@ -44,7 +44,7 @@ const useTodoList = () => {
         workTodos = todos.filter(todo => !todo.done)
     }
 
-    return { todos: workTodos, addTodo, switchTodoDoneStatus, deleteTodo, switchFilterDoneTodo } as const
+    return { todos: workTodos, addTodo, switchTodoDoneStatus, deleteTodo, filterDoneTodo, switchFilterDoneTodo } as const
 }
 
 export default useTodoList
