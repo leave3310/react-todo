@@ -4,7 +4,13 @@ import "./index.css";
 const TodoList = () => {
   return (
     <div className="layout">
-      <div>TodoList</div>
+      <div className="todoListWrapper">
+        <div className="header">
+          <span className="title">TodoList</span>
+          <span className="subTitle">Hi~</span>
+        </div>
+        
+      </div>
     </div>
   );
 };

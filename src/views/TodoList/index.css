@@ -7,4 +7,20 @@
 }
 
 .todoListWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+.title{
+  font-size: 32px;
+}
+.subTitle{
+  font-size: 20px;
 }
