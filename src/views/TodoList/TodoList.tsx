@@ -2,6 +2,9 @@ import React from "react";
 import "./index.css";
 import Filter from "./Filter";
 import useTodoList from "../../hooks/useTodoList";
+import TodoItem from "./TodoItem";
+import Form from "./Form";
+
 const TodoList = () => {
   const todoList = useTodoList();
 
@@ -16,6 +19,16 @@ const TodoList = () => {
           filterDoneTodo={todoList.filterDoneTodo}
           switchFilterDoneTodo={todoList.switchFilterDoneTodo}
         />
+        <div className="todoList">
+          {todoList.todos.map((todo) => (
+            <TodoItem
+              todo={todo}
+              switchTodoDoneStatus={todoList.switchTodoDoneStatus}
+              deleteTodo={todoList.deleteTodo}
+            />
+          ))}
+        </div>
+        <Form addTodo={todoList.addTodo} />
       </div>
     </div>
   );
