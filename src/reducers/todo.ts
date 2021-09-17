@@ -7,6 +7,7 @@ interface TodoState {
     filterDoneTodo: boolean
 }
 
+
 const initialState: TodoState = {
     todos: [],
     displayTodos: [],

@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./index.css";
 import Filter from "./Filter";
-import useTodoList from "../../hooks/useTodoList";
 import TodoItem from "./TodoItem";
 import Form from "./Form";
 import {
@@ -14,7 +13,6 @@ import {
 import { rootState } from "../../store";
 
 const TodoList = () => {
-  const todoList = useTodoList();
   const dispatch = useDispatch();
   return (
     <div className="layout">

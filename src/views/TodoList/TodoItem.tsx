@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Todo } from "../../types/todoList";
 
 type TodoProps = {
@@ -8,6 +9,7 @@ type TodoProps = {
 };
 
 const TodoItem = (props: TodoProps) => {
+  const history = useHistory();
   return (
     <div className="todoItem">
       <span
@@ -23,6 +25,14 @@ const TodoItem = (props: TodoProps) => {
             props.switchTodoDoneStatus(props.todo.id);
           }}
         />
+        <button
+          type="button"
+          onClick={() => {
+            history.push(`/todo/${props.todo.id}`);
+          }}
+        >
+          詳細資訊
+        </button>
         <button
           type="button"
           onClick={() => {
