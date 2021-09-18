@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { rootState } from "../../store";
 import { Todo as ITodo } from "../../types/todoList";
 import { getTodoById } from "../../actions/todo";
+import "./index.css";
 
 const Todo = () => {
+  const history = useHistory();
   const { id }: { id: string } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -14,7 +16,23 @@ const Todo = () => {
 
   const todo: ITodo = useSelector((state: rootState) => state.todo);
 
-  return <div>{todo.name}</div>;
+  return (
+    <div className="layout">
+      <div className="todo">
+        <span>ID:{todo.id}</span>
+        <h1>{todo.name}</h1>
+        <p>
+          完成狀況:
+          <span style={{ color: todo.done ? "#21bf73" : "#eb8f8f" }}>
+            {todo.done ? "已完成" : "未完成"}
+          </span>
+        </p>
+        <button type="button" onClick={() => history.push("/")}>
+          回代辦事項列表
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default Todo;
